@@ -1,8 +1,13 @@
 .GridComponent {
+  margin: 0 auto;
+  height: 100vh;
+  background: linear-gradient(to bottom right, aqua, lightblue);
+  text-align: center;
+  padding: 4em 0;
   &-container {
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(10, 50px);
     gap: 10px;
-    grid-auto-rows: minmax(50px, auto);
+
   }
 }
