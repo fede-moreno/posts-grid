@@ -1,13 +1,20 @@
 .GridComponent {
-  margin: 0 auto;
+  $_cardSize: 5rem;
+
   height: 100vh;
-  background: linear-gradient(to bottom right, aqua, lightblue);
+  background: linear-gradient(to bottom right, $pg-color-blue-2, $pg-color-blue-1);
   text-align: center;
   padding: 4em 0;
+
   &-container {
     display: grid;
-    grid-template-columns: repeat(10, 50px);
-    gap: 10px;
+    grid-template-columns: repeat(10, $_cardSize);
+    gap: 1rem;
+    justify-content: center;
 
+    @media screen and (max-width: $pg-breakpoint-small) {
+      $_smallCardSize: 3rem;
+      grid-template-columns: repeat(10, $_smallCardSize);
+    }
   }
 }

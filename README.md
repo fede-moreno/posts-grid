@@ -1,4 +1,21 @@
 # PostsGrid
+Uses [jsonplaceholder API](https://jsonplaceholder.typicode.com/) to fetch 100 posts and render them
+all where each post in a separate component and show them as squares, 10 rows x 10 columns
+Considering the response of the 100 post request will look like:
+```
+{
+"userId": 1,
+"id": 1,
+"title": "sunt aut facere repellat provident...",
+"body": "quia et suscipit\nsuscipi..."
+},
+```
+1. By default, show the post id
+1. When clicking on a square: replace the id with the userId
+1. When clicking again show the id and so on...
+1. Impress us with your design taste
+1. Bonus: Shared-state made by RxJS only
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.6.
 
@@ -16,11 +33,11 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test` to execute the unit tests via [Jest](https://jestjs.io/).
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run `ng e2e` to execute the end-to-end tests via [Cypress](https://www.cypress.io/).
 
 ## Further help
 

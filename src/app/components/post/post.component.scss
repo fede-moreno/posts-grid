@@ -1,37 +1,50 @@
 .PostComponent {
+  $_cardSize: 5rem;
 
-    width: 50px;
-    height: 50px;
-    perspective: 150em;
+  width: $_cardSize;
+  height: $_cardSize;
+  perspective: 150em;
+  cursor: pointer;
 
-    &-front, &-back {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 50px;
-      height: 50px;
-      backface-visibility: hidden;
-      transition: all .6s ease;
-      box-shadow: 1em 1em 2em rgba(0,0,0,.2);
-    }
-    &-front {
-      background-color: #FFF;
+  &-front, &-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $_cardSize;
+    height: $_cardSize;
+    backface-visibility: hidden;
+    transition: all .6s ease;
+    box-shadow: 1em 1em 2em rgba(0, 0, 0, .2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    }
-    &-back {
-      transform: rotateY(180deg);
-      color: #FFF;
-      background-image: linear-gradient(to right bottom, #2998FF, #5643FA);
-    }
+  &-front {
+    background-color: $pg-color-white;
+  }
+
+  &-back {
+    transform: rotateY(180deg);
+    color: $pg-color-white;
+    background-image: linear-gradient(to right bottom, $pg-color-blue-3, $pg-color-purple);
+  }
+
   &-active &-front {
     transform: rotateY(-180deg);
   }
+
   &-active &-back {
     transform: rotate(0);
-
   }
 
-    p {
+  @media screen and (max-width: $pg-breakpoint-small) {
+    $_smallCardSize: 3rem;
+    width: $_smallCardSize;
+    height: $_smallCardSize;
+    &-front, &-back {
+      width: $_smallCardSize;
+      height: $_smallCardSize;
     }
-
+  }
 }
