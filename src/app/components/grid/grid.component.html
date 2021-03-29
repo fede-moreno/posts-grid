@@ -1,0 +1,5 @@
+<main class="GridComponent">
+  <div class="GridComponent-container">
+    <app-post *ngFor="let post of stateService.states$ | async" [post]="post"></app-post>
+  </div>
+</main>

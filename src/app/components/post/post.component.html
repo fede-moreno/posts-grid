@@ -1,0 +1,8 @@
+<div class="PostComponent" [class.PostComponent-active]="post.active" *ngIf="post" (click)="handleClick()">
+    <div class="PostComponent-front">
+      <p> {{ post.id }} </p>
+    </div>
+    <div class="PostComponent-back">
+      <p> {{ post.userId }} </p>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+@import '../../../shared-styles';
+
+.PostComponent {
+  $_cardSize: 5rem;
+
+  width: $_cardSize;
+  height: $_cardSize;
+  perspective: 150em;
+  cursor: pointer;
+
+  &-front, &-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $_cardSize;
+    height: $_cardSize;
+    backface-visibility: hidden;
+    transition: all .6s ease;
+    box-shadow: 1em 1em 2em rgba(0, 0, 0, .2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-front {
+    background-color: #fff;
+  }
+
+  &-back {
+    transform: rotateY(180deg);
+    color: #fff;
+    background-image: linear-gradient(to right bottom, $pg-color-blue-3, $pg-color-purple);
+  }
+
+  &-active &-front {
+    transform: rotateY(-180deg);
+  }
+
+  &-active &-back {
+    transform: rotate(0);
+  }
+
+  @media screen and (max-width: $pg-breakpoint-small) {
+    $_smallCardSize: 3rem;
+    width: $_smallCardSize;
+    height: $_smallCardSize;
+    &-front, &-back {
+      width: $_smallCardSize;
+      height: $_smallCardSize;
+    }
+  }
+}
