@@ -1,3 +1,5 @@
+@import '../../../shared-styles';
+
 .PostComponent {
   $_cardSize: 5rem;
 
@@ -21,12 +23,12 @@
   }
 
   &-front {
-    background-color: $pg-color-white;
+    background-color: #fff;
   }
 
   &-back {
     transform: rotateY(180deg);
-    color: $pg-color-white;
+    color: #fff;
     background-image: linear-gradient(to right bottom, $pg-color-blue-3, $pg-color-purple);
   }
 

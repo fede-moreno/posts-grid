@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { GridComponent } from './grid.component';
+import { PostComponent } from '../post/post.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('GridComponent', () => {
   let component: GridComponent;
@@ -8,9 +9,10 @@ describe('GridComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GridComponent ]
+      declarations: [GridComponent, PostComponent],
+      imports: [HttpClientTestingModule]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
