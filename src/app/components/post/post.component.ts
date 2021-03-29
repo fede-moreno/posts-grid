@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { AfterViewChecked, ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { Post } from '../../models/post.model';
+import { StateService } from '../../services/state.service';
 
 @Component({
   selector: 'app-post',
@@ -9,15 +10,16 @@ import { Post } from '../../models/post.model';
 })
 export class PostComponent implements OnInit {
   @Input() post: Post | undefined;
-  isClicked = false;
 
-  constructor() {
+  constructor(private stateService: StateService) {
   }
 
   ngOnInit(): void {
   }
 
   handleClick(): void {
-    this.isClicked = !this.isClicked;
+    if (this.post) {
+      this.stateService.updatePostStatus(this.post);
+    }
   }
 }

@@ -1,7 +1,5 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { ApiService } from '../../services/api.service';
-import { take } from 'rxjs/operators';
-import { Post } from '../../models/post.model';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { StateService } from '../../services/state.service';
 
 @Component({
   selector: 'app-grid',
@@ -10,13 +8,8 @@ import { Post } from '../../models/post.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GridComponent implements OnInit {
-  posts: Post[] = [];
-  constructor(private apiService: ApiService, private changeDetect: ChangeDetectorRef) { }
+  constructor(public stateService: StateService) { }
 
   ngOnInit(): void {
-    this.apiService.getPosts().pipe(take(1)).subscribe((posts) => {
-      this.posts = posts;
-      this.changeDetect.markForCheck();
-    });
   }
 }

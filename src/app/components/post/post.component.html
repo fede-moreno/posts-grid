@@ -1,4 +1,4 @@
-<div class="PostComponent" [class.PostComponent-active]="isClicked" *ngIf="post" (click)="handleClick()">
+<div class="PostComponent" [class.PostComponent-active]="post.active" *ngIf="post" (click)="handleClick()">
     <div class="PostComponent-front">
       <p> {{ post.id }} </p>
     </div>
