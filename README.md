@@ -1,4 +1,4 @@
-# PostsGrid
+# PostsGrid - https://posts-grid.herokuapp.com/
 Uses [jsonplaceholder API](https://jsonplaceholder.typicode.com/) to fetch 100 posts and render them
 all where each post in a separate component and show them as squares, 10 rows x 10 columns
 Considering the response of the 100 post request will look like:
